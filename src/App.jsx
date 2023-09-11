@@ -9,7 +9,7 @@ function App() {
     <>
       <div className='container mx-auto py-4 px-4'>
         <Header />
-        <div className='flex justify-between flex-col md:flex-row lg:flex-row pt-4 px-2'>
+        <div className='flex justify-between flex-col md:flex-row lg:flex-row pt-10 px-2'>
           <Blogs />
           <Bookmarks />
         </div>

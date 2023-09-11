@@ -13,7 +13,7 @@ const Blogs = () => {
 
 
     return (
-        <div>
+        <div className='w-full'>
             {
                 blogs.map(blog => <Blog 
 

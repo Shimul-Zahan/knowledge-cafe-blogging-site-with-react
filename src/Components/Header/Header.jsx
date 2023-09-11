@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className="navbar border-b-2">
             <div className="flex-1">
-                <a className="normal-case text-2xl">Knowledge Cafe</a>
+                <a className="text-3xl text-bold normal-case">Knowledge Cafe</a>
             </div>
             <div className="flex-none">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
