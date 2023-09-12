@@ -1,6 +1,8 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleBookmarks }) => {
   
   const { cover, title, author_img, author, posted_date, reading_time, hashtags } = blog;
 
@@ -22,9 +24,9 @@ const Blog = ({ blog }) => {
             <p className='text-base font-medium'>{posted_date}</p>
           </div>
         </div>
-        <div className='flex gap-3'>
-          <p className='text-red-400 text-base'>{reading_time} min read</p>
-          <p>X</p>
+        <div className='flex gap-3 items-center'>
+          <p onClick={()=> markAsRead(reading_time)} className='text-red-400 text-base underline'>{reading_time} min read</p>
+          <FontAwesomeIcon onClick={ () => handleBookmarks(blog)} icon={faBookmark} className='h-8 cursor-pointer' />
         </div>
       </div>
 
@@ -33,7 +35,7 @@ const Blog = ({ blog }) => {
       </div>
       <div className='space-x-2'>
         {
-          hashtags.map(hashtag => <span>#{hashtag}</span>)
+          hashtags.map((hashtag, index) => <span key={index}>#{hashtag}</span>)
         }
       </div>
     </div>

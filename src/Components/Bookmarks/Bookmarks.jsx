@@ -1,14 +1,10 @@
 import React from 'react'
 
-const Bookmarks = () => {
+const Bookmarks = ({bookmark}) => {
   return (
-    <div className='w-full md:w-1/3'>
-      <div className=' bg-red-100 rounded-lg px-4 py-4 space-y-4'>
-          <h1 className='bg-red-200 rounded-lg p-4'>Hello</h1>
-          <h1 className='bg-red-200 rounded-lg p-4'>Hello</h1>
-          <h1 className='bg-red-200 rounded-lg p-4'>Hello</h1>
-          <h1 className='bg-red-200 rounded-lg p-4'>Hello</h1>
-          <h1 className='bg-red-200 rounded-lg p-4'>Hello</h1>
+    <div className='w-full bg-red-500 rounded-lg text-xl font-medium'>
+      <div className=' bg-red-500 px-4 py-1 w-full'>
+        <h1 className='bg-white rounded-lg p-4 my-4'>{bookmark}</h1>
       </div>
     </div>
   )
