@@ -7,14 +7,17 @@ import Header from './Components/Header/Header'
 function App() {
 
   const [bookmarks, setBookmarks] = useState([]);
-  const [time, setTime] = useState(0);
+  const [initialTime, setTime] = useState(0);
 
   const handleBookmarks = blog => {
-    setBookmarks([...bookmarks, blog.title]);
+    setBookmarks([...bookmarks, blog]);
   }
 
-  const markAsRead = time => {
-    console.log('time clicked', time);
+  const markAsRead = (time, id) => {
+    const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !== id);
+    setBookmarks(remainingBookmarks);
+    
+    setTime(initialTime + time);
   }
 
   return (
@@ -29,7 +32,7 @@ function App() {
 
           <div className='w-full md:w-1/3'>
             <div className=' bg-red-500 px-4 py-1 w-full my-4 rounded-lg'>
-              <h1 className='bg-white rounded-lg p-4 my-4 text-2xl font-bold text-center'>50 Mins</h1>
+              <h1 className='bg-white rounded-lg p-4 my-4 text-2xl font-bold text-center'>{initialTime? initialTime: '00'} Mins</h1>
             </div>
             {
               bookmarks.map(bookmark => <Bookmarks bookmark={bookmark} />)
