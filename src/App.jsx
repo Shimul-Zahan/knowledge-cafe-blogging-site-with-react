@@ -9,8 +9,14 @@ function App() {
   const [bookmarks, setBookmarks] = useState([]);
   const [initialTime, setTime] = useState(0);
 
+  // add only unique bookmarks not allowed duplicate bookmark
   const handleBookmarks = blog => {
-    setBookmarks([...bookmarks, blog]);
+    const eligable = bookmarks.find(bookmark => bookmark.id === blog.id);
+    if (eligable) {
+      window.alert('Already exist in bookmarks.')
+    } else {
+      setBookmarks([...bookmarks, blog]);
+    }
   }
 
   const markAsRead = (time, id) => {
